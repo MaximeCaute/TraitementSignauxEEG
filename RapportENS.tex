@@ -1,0 +1,49 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+
+\usepackage{amsmath}
+
+
+\newtheorem{myDef}{Définition}
+\newtheorem{ex}{Exemple}
+
+%\usepackage{biblatex}
+
+%\addbibresource{biblio.bib}
+
+
+
+\begin{document}
+
+\title{Transport optimal et apprentissage automatique pour débruitage de signaux EEG \\
+			Rapport de projet de M1}
+\author{Maxime Cauté}
+%\affil{ENS Rennes} %IRISA & EMPENN ?
+
+
+\maketitle
+
+\subsection{Transport Optimal (discret)}
+
+Le transport optimal est une méthode d'optimisation.
+
+Formellement, pour deux distributions de probabilité (deux vecteurs dans $[0,1]$ dont la somme vaut 1) $v, v'$, cela revient à calculer un élément minimal de l'ensemble $\theta$ suivant :
+
+	$$ \Theta = \{ T \in M_m(R), \sum_{j=1}^m t_{i,j} = v_i \wedge \sum_{i=1}^m t_{i,j} = v'_j\}$$
+
+On cherche ensuite à minimiser :
+
+	$$ T_0 = argmin_{T \in \Theta} <T, C>_F = argmin_{T \in \Theta} \sum_{i,j} t_{i,j}c_{i,j} $$
+	
+La matrice $C$ est une fonction de coût, dont les composantes $c_{i,j}$ représentent le coût de transport de $v_i$ vers $v'_j$. Si $C$ est symétrique, $<T_0,C>$ devient la distance du terrassier entre $v$ et $v'$.
+	
+
+
+
+\section*{Remerciements}
+
+Pierre Maurel, Julie Coloigner, Giulia Lioi de l'équipe Empenn pour l'encadrement
+
+
+\end{document}
