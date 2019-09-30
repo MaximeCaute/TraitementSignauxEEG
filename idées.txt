@@ -1,0 +1,5 @@
+Pour la semaine prochaine : 
+
+	- code d'un générateur de toy examples : somme de deux sinusoides déphasées...
+
+	- code de solveurs en transport optimal
