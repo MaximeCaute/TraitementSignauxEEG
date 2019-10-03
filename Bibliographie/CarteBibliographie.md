@@ -1,6 +1,6 @@
 # Carte de la bibliographie
 
-##Debruitage des EEG
+## Debruitage des EEG
 
 ### These_Hajipour_Sardouie.pdf
 
@@ -37,7 +37,7 @@ Usage de la regularisation entropique
 
 Code python https://github.com/rflamary/OST
 
-Lien original : Mail de Julie
+Lien original : https://arxiv.org/abs/1609.09799
 
 ### MinimumWassersteinEstimate.pdf
 
