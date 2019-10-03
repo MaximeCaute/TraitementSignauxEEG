@@ -2,5 +2,5 @@ Bibliographie/*.pdf
 Rapports/RapportENS/RapportENS.*
 !Rapports/RapportENS/RapportENS.tex
 
-Notebooks/.ipynb_checkpoints/Manips\ MNE-checkpoint.ipynb
+Notebooks/.ipynb_checkpoints/*.ipynb
 EEG_Data/
