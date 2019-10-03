@@ -1,3 +1,5 @@
 Bibliographie/*.pdf
 Rapports/RapportENS/RapportENS.*
 !Rapports/RapportENS/RapportENS.tex
+
+Notebooks/Manips\ MNE.ipynb
