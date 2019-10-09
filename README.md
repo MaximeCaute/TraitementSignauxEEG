@@ -9,3 +9,6 @@ Repository for M1 Project in Empenn team, IRISA, Rennes, France
 * matplotlib
 * mne
 * POT
+* pandas (unused)
+* numpy
+* scipy
