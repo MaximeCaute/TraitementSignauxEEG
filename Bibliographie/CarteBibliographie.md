@@ -116,13 +116,74 @@ La méthode basée sur les paquets d'ondelettes obtient de plus grands ratios br
 
 Lien original : https://pdfs.semanticscholar.org/5fd1/00cd6261e11760fe3b4009b9f686c397cae7.pdf
 
+### Soustraction_ArtefactPouls_1998.pdf
+
+**Identification of EEG Events in the MR Scanner: The Problem of Pulse Artifact and a Method for Its Subtraction**
+
+*Philip J. Allen, Giovanni Polizzi, Karsten Krakow, David R. Fish, et Louis Lemieux*
+
+Article de 1998 paru dans NeuroImage qui présente une méthode de soustraction de l'artefact de pouls dans un signal EEG.
+
+Utilisation de l'IRM pour repérer immédiatement les endroits où se déroulent les événements repérés par une EEG. Plusieurs applications existent.
+Artefacts nés d'interactions entre le patient, les électrodes métalliques, et le champ magnétique. Détail étendu de telles interactions.
+
+Mesure de l'amplitude et de la distribution de l'artefact.
+
+Algorithme de soustraction initial (seconde par seconde) :
+  1. identification des pics ECG (complexe QRS) dans les 10 secondes précédentes;
+  2. calcul de la forme moyenne d'AP sur ces 10 secondes, plus ou moins la moitié de l'intervalle RR (intervalle entre deux pics), pour chaque signal EEG de référence;
+  3. soustraction de la forme moyenne du signal sur les 3 dernières secondes, i.e. sur l'avant dernière seconde et les deux l'entourant;
+  4. affichage de l'avant dernière seconde.
+
+L'affichage est donc **décalé d'une seconde**.
+
+Raison des choix :
+  - avant-dernière seconde parce que le calcul de la forme moyenne d'AP pourrait devoir déborder sur une durée d'un intervalle R-R après la seconde affichée.
+  - fenêtre de 10 secondes comme compromis entre assez long pour un bon moyennage, et assez court pour s'adapter aux variations.
+
+Il est important de détecter un maximum de pics car ceux non perçus peuvent perturber ces calculs, mais cela est difficile.
+
+Méthode de détection des pics: recherche d'un point d'inversion de la courbe après un passage de seuil d'amplitude;
+
+Pour faciliter cela :
+  1. application d'un filtre passe bas à moyenne glissante sur trois coefficients pour réduire le bruit de haute fréquence;
+  2. application d'un filtre passe haut à réponse impulsionnelle finie, avec 25 coefficients et une coupure de 20 Hz pour atténuer les changements de référentiel;
+  3. découpage de la fenêtre de 10s en sections de 0.5s; rejet des sections d'amplitude moyenne relativement trop haute pour éviter des faux positifs dûs aux artefacts de l'ECG;
+      la méthode est comme suit;
+        1. un premier seuil est fixé comme 4 fois l'amplitude moyenne des 10 sections d'amplitude minimale;
+        2. on calcule des valeurs maximales et minimale, et on regarde laquelle est la plus éloignée de la valeur moyenne; ces valeurs sont calculées comme la moyenne des 5 plus grandes (resp. plus faibles) valeurs dans des sections différentes; celles des 5 qui sont au moins 2 fois supérieures à la plus faible sont finalement exclues comme pics de bruit;
+        3. on définit un seuil comme la différence entre le maximum et le minimum, plus ou moins 33% de celle-ci, selon le résultat de l'étape précédente.
+
+Validation des pics a posteriori par le calcul fonction de corrélation croisée entre la forme d'onde ECG à chaque pic et une forme d'onde ECG moyenne.
+Ajout de pics manqués dans les premières étapes.
+
+**Figure 2. résumant bien l'algorithme**.
+
+Validation de l'algorithme de soustraction par analyse de fréquence.
+
+Composants résiduels après traitement, mais réduction significative des artefacts.
+
+### Suppression_ArtefactsImagerie_2000.pdf
+
+**A Method for Removing Imaging Artifact from Continuous EEG Recorded during Functional MRI**
+
+*Philip J. Allen, Oliver Josephs, et Robert Turner*
+
+Article publié en 2000 dans NeuroImage présentant une méthode de réduction de l'artefact d'imagerie (*Imaging Artifact*).
+
+Artefacts nés d'interactions entre le patient, les électrodes métalliques, et le champ magnétique. Détail étendu de telles interactions.
+
+**TODO**
+
 ## Transport optimal
 
 ### OST_Music_2016.pdf
 
+**Optimal spectral transportation with application to music transcription**
+
 *Rémi Flamary, Cédric Févotte, Nicolas Courty, Valentin Emiya*
 
-Article d'octobre 2016 qui emploie le transport optimal pour la transcription de signaux musicaux.
+Article paru dans NIPS, d'octobre 2016 qui emploie le transport optimal pour la transcription de signaux musicaux.
 
 Les propriétés de la multiplicité des harmoniques sont exploitées, ce que nous ne pouvons pas faire.
 
