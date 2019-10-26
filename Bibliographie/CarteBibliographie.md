@@ -131,7 +131,7 @@ Mesure de l'amplitude et de la distribution de l'artefact.
 
 Algorithme de soustraction initial (seconde par seconde) :
   1. identification des pics ECG (complexe QRS) dans les 10 secondes précédentes;
-  2. calcul de la forme moyenne d'AP sur ces 10 secondes, plus ou moins la moitié de l'intervalle RR (intervalle entre deux pics), pour chaque signal EEG de référence;
+  2. calcul de la forme moyenne d'AP sur ces 10 secondes, plus ou moins la moitié de l'intervalle RR (intervalle entre deux pics), pour chaque signal **EEG** de référence;
   3. soustraction de la forme moyenne du signal sur les 3 dernières secondes, i.e. sur l'avant dernière seconde et les deux l'entourant;
   4. affichage de l'avant dernière seconde.
 
@@ -146,7 +146,7 @@ Il est important de détecter un maximum de pics car ceux non perçus peuvent pe
 Méthode de détection des pics: recherche d'un point d'inversion de la courbe après un passage de seuil d'amplitude;
 
 Pour faciliter cela :
-  1. application d'un filtre passe bas à moyenne glissante sur trois coefficients pour réduire le bruit de haute fréquence;
+  1. application d'un filtre passe bas en moyenne glissante sur trois coefficients pour réduire le bruit de haute fréquence;
   2. application d'un filtre passe haut à réponse impulsionnelle finie, avec 25 coefficients et une coupure de 20 Hz pour atténuer les changements de référentiel;
   3. découpage de la fenêtre de 10s en sections de 0.5s; rejet des sections d'amplitude moyenne relativement trop haute pour éviter des faux positifs dûs aux artefacts de l'ECG;
       la méthode est comme suit;
@@ -154,7 +154,7 @@ Pour faciliter cela :
         2. on calcule des valeurs maximales et minimale, et on regarde laquelle est la plus éloignée de la valeur moyenne; ces valeurs sont calculées comme la moyenne des 5 plus grandes (resp. plus faibles) valeurs dans des sections différentes; celles des 5 qui sont au moins 2 fois supérieures à la plus faible sont finalement exclues comme pics de bruit;
         3. on définit un seuil comme la différence entre le maximum et le minimum, plus ou moins 33% de celle-ci, selon le résultat de l'étape précédente.
 
-Validation des pics a posteriori par le calcul fonction de corrélation croisée entre la forme d'onde ECG à chaque pic et une forme d'onde ECG moyenne.
+Validation des pics a posteriori par le calcul d'une fonction de corrélation croisée entre la forme d'onde ECG à chaque pic et une forme d'onde ECG moyenne.
 Ajout de pics manqués dans les premières étapes.
 
 **Figure 2. résumant bien l'algorithme**.
