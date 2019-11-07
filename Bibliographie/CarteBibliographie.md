@@ -157,6 +157,8 @@ Pour faciliter cela :
 Validation des pics a posteriori par le calcul d'une fonction de corrélation croisée entre la forme d'onde ECG à chaque pic et une forme d'onde ECG moyenne.
 Ajout de pics manqués dans les premières étapes.
 
+Lien (référence) : https://www.sciencedirect.com/science/article/abs/pii/S1053811998903615?via%3Dihub
+
 **Figure 2. résumant bien l'algorithme**.
 
 Validation de l'algorithme de soustraction par analyse de fréquence.
