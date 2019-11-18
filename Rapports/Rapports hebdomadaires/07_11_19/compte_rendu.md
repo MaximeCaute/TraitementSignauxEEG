@@ -28,4 +28,4 @@ Et éventuellement,
 
 
 ## Date de la prochaine réunion :
-**Jeudi 20 novembre, 11h00**
+**Mercredi 19 novembre, 10h30**
