@@ -163,6 +163,10 @@ Lien (référence) : https://www.sciencedirect.com/science/article/abs/pii/S1053
 
 Validation de l'algorithme de soustraction par analyse de fréquence.
 
+À noter sur le nettoyage EEG de l'AP :
+  - décalage lié à la distance électrode EEG/ electrode ECG;
+
+
 Composants résiduels après traitement, mais réduction significative des artefacts.
 
 ### Suppression_ArtefactsImagerie_2000.pdf
